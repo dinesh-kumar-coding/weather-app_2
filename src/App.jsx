@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SearchForm from "./SearchForm";
+import './App.css'
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -51,17 +52,17 @@ function App() {
     <>
       <SearchForm fetchWeather={fetchWeather}></SearchForm>
       {loading ? (
-        <p>Loading...</p>
+        <p className="message">Loading...</p>
       ) : error ? (
-        <p>{error}</p>
+        <p className="message">{error}</p>
       ) : weather ?(
-        <>
-          <p>{location?.name}, {location?.country}</p>
-          <p>Temperature: {weather?.current_weather?.temperature}°C</p>
-          <p>Wind: {weather?.current_weather?.windspeed} km/h</p>
-        </>
+        <div className="weather-card">
+          <p className="place">{location?.name}, {location?.country}</p>
+          <p className="temp">Temperature: {weather?.current_weather?.temperature}°C</p>
+          <p className="muted">Wind: {weather?.current_weather?.windspeed} km/h</p>
+        </div>
       ) : (
-        <p>Search for a city to see its weather.</p>
+        <p className="message">Search for a city to see its weather.</p>
       )}
     </>
   );
