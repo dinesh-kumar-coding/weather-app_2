@@ -2,7 +2,7 @@
 
 A weather search app built with React, using the free Open-Meteo API (no API key required). Type a city and get its current weather. This version demonstrates **chaining two API requests** — first converting a city name to coordinates (geocoding), then fetching the weather for those coordinates.
 
-🔗 **Live demo:** _add your Vercel URL here_
+🔗 **Live demo:** https://weather-app-2-din-dev.vercel.app/
 
 ---
 
